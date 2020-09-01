@@ -1,6 +1,3 @@
----
-title: elements
----
 
 <section>
 	<h3 class="major">Text</h3>
