@@ -2,7 +2,7 @@
 title: about
 image: 
 ---
-I'm a back-end programmer with a bit of a front-end too, I'm interested in network infrastructure, natural language processing, minimalist art, futurism, vaporwave and art nouveau.
+I'm a back-end programmer with a bit of a front-end too, I'm interested in FOSS culture, network infrastructure, natural language processing, minimalist art, futurism, vaporwave and art nouveau.
 
 
 <section>

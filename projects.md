@@ -3,7 +3,7 @@ title: "projects"
 markdown: kramdown
 ---
 
-<p>I am currently working at as a web and mobile systems developer with a greater focus on the latter. In addition, I participate in other projects such as:</p>
+I am currently working at as a web and mobile systems developer with a greater focus on the latter. In addition, I participate in other projects such as:
 
 <ul>
 <li><a href="https://github.com/cypherpunksbr/cypherpunks.com.br" target="_blank">Cypherpunks Brasil.</a></li>
