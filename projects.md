@@ -3,7 +3,7 @@ title: "projects"
 markdown: kramdown
 ---
 
-Currently working with NodeJS backend. Also, I participate in other projects such as:
+Currently working with freelancer. Also, I participate in other projects such as:
 
 <ul>
 <li><a href="https://github.com/cypherpunksbr/cypherpunks.com.br" target="_blank">Cypherpunks Brasil.</a></li>
