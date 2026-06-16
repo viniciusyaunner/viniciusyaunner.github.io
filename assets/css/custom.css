@@ -290,16 +290,19 @@ body {
 @media (max-width: 480px) {
   body { padding: 8px 6px 20px; }
 
-  .hero-body { padding: 20px 12px 18px; }
+  .hero-body { padding: 20px 14px 18px; }
   .hero-avatar img { width: 72px; height: 72px; }
   .hero-text h1 { font-size: 16px; }
   .hero-nav-btn { min-width: 80px; }
-
+  .hero-text p { font-size: 14px; }
   .panel-body { padding: 12px; }
 
-  .actions li input { width: 100%; }
-  .actions { flex-direction: column;}
-  .actions ul { justify-content: center; }
+  .actions {
+    flex-direction: column;
+    align-items: center; 
+  }
+  .actions li input { width: 100%; } 
+
 }
 
 /* ── Skip-to-content accessibility link ──────────────────────── */
