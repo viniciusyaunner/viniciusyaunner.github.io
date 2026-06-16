@@ -2,22 +2,29 @@
 title: Vinicius Yaunner
 email: viniciusyaunner@protonmail.com
 description: >
-  Programmer, security analyst, and cypherpunk. I run Arch and Parrot, contribute to open source, and care deeply about privacy and decentralized tech. When I'm not writing back-end code or digging into network infrastructure, I'm somewhere at the intersection of NLP, minimalist art, vaporwave, and art nouveau — finding patterns in both systems and aesthetics.
-author: Vinicius Yaunner 
+  Programmer, security analyst, and cypherpunk. I run Arch Linux and Parrot OS, 
+  contribute to open source, and care deeply about privacy and decentralized tech. 
+  When I'm not writing back-end code or digging into network infrastructure, 
+  I'm somewhere at the intersection of NLP, minimalist art, vaporwave, and art nouveau 
+  — finding patterns in both systems and aesthetics.
+author: Vinicius Yaunner
 lang: en
 url: "https://viniciusyaunner.com"
 baseurl: ""
 
 # ── Social ─────────────────────────────────────────────────────
-github_url:    https://github.com/viniciusyaunner
+github_url: https://github.com/viniciusyaunner
 instagram_url: https://www.instagram.com/viniciusyaunner/
-linkedin_url:  https://www.linkedin.com/in/viniciusyaunner/
+linkedin_url: https://www.linkedin.com/in/viniciusyaunner/
 
 # ── Footer ─────────────────────────────────────────────────────
 footer_text: >
   Design inspired by Windows 98 — built with
   <a href="https://jekyllrb.com" rel="noopener noreferrer" target="_blank">Jekyll</a>
   and <a href="https://github.com/jdan/98.css" rel="noopener noreferrer" target="_blank">98.css</a>.
+   The background art is one of the ones I had made for 
+   <a href="https://cypherpunks.com.br/artes/" rel="noopener noreferrer" target="_blank">Cypherpunks Brazil</a>
+   using <a href="https://www.gimp.org/" rel="noopener noreferrer" target="_blank">GIMP</a>.
 
 # ── Build settings ─────────────────────────────────────────────
 markdown: kramdown
@@ -35,7 +42,6 @@ exclude:
   - Gemfile.rb
   - README.md
   - LICENSE.md
-  - .gitlab-ci.yml
   - .gitignore
   - "**/*.Zone.Identifier"
   - "**/*#Uf03a*"
