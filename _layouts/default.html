@@ -1,34 +1,35 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
 {% include head.html %}
-
-  <body>
+<body>
 
 {% include header.html %}
 
-{% for page in site.pages  %}
-{% if page.title %}
-
-<!-- {{ page.title }} -->
-<article id="{{ page.title }}">
-	<h2 class="major">{{ page.title }}</h2>
-	{% if page.image %}<span class="image main"><img src="assets/images/{{ page.image }}" alt="" /></span>{% endif %}
-<p>
-{{ page.content }}
-</p>
-</article>
-
-{% endif %}
+{% for p in site.pages %}
+  {% if p.title %}
+  <section
+    id="panel-{{ p.title }}"
+    class="window content-window"
+    role="region"
+    aria-label="{{ p.title | capitalize }}"
+    hidden
+  >
+    <div class="title-bar">
+      <div class="title-bar-text">{{ p.title | capitalize }}</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button class="panel-close-btn" aria-label="Close" data-panel="{{ p.title }}"></button>
+      </div>
+    </div>
+    <div class="window-body panel-body">
+      {{ p.content }}
+    </div>
+  </section>
+  {% endif %}
 {% endfor %}
 
 {% include footer.html %}
 
-  </body>
-
+</body>
 </html>

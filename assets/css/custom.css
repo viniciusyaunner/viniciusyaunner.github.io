@@ -1,0 +1,319 @@
+/* ══════════════════════════════════════════════════════════════
+   custom.css  –  Win98 Portfolio Theme
+   Author : Vinicius Yaunner
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Reset / base ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 24px 16px 32px;
+  background-color: #008080;           /* Classic Win98 teal */
+  background-image:
+    repeating-linear-gradient(45deg,  rgba(0,0,0,.04) 0 1px, transparent 1px 8px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,.04) 0 1px, transparent 1px 8px),
+    url("/assets/images/banner.webp");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Pixelated MS Sans Serif', 'MS Sans Serif', Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* ── Desktop container ───────────────────────────────────────── */
+.desktop {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Window base overrides ───────────────────────────────────── */
+.window {
+  width: 100%;
+}
+
+/* ── Hero window ─────────────────────────────────────────────── */
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 28px 20px 24px;
+}
+
+.hero-avatar {
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.hero-avatar img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-text h1 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #000080;
+}
+
+.hero-text p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  color: #333;
+  text-align: justify;
+}
+.hero-text .title-and-icons-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+}
+
+/* ── Nav buttons inside hero ─────────────────────────────────── */
+.hero-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hero-nav-btn {
+  font-family: inherit;
+  font-size: 12px;
+  min-width: 90px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ── Content panels (hidden by default, shown by JS) ─────────── */
+.content-window {
+  display: none;           /* toggled to flex by JS */
+  flex-direction: column;
+}
+
+.content-window:not([hidden]) {
+  display: flex;
+}
+
+.panel-body {
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.panel-body p {
+  margin: 0 0 12px;
+}
+
+.panel-body ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.panel-body ul li {
+  margin-bottom: 6px;
+}
+
+.panel-body a {
+  color: #000080;
+  text-decoration: underline;
+}
+
+.panel-body a:hover,
+.panel-body a:focus {
+  color: #0000cc;
+  outline: 1px dotted #000080;
+  outline-offset: 2px;
+}
+
+/* ── Contact form ────────────────────────────────────────────── */
+.panel-body h2 {
+  font-size: 18px;
+  margin: 0 0 14px;
+  border-bottom: 1px solid #808080;
+  padding-bottom: 4px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+  margin-bottom: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field.half { grid-column: span 1; }
+.field:not(.half) { grid-column: span 2; }
+
+.field label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field textarea {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 4px 6px;
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid;
+  border-color: #808080 #fff #fff #808080;
+  resize: vertical;
+  color: #000;
+}
+
+.field input[type="text"]:focus,
+.field input[type="email"]:focus,
+.field textarea:focus {
+  outline: 1px dotted #000080;
+  outline-offset: 1px;
+}
+
+.field textarea { height: 96px; }
+
+/* submit / reset row */
+.actions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.actions li input {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ── Social icons list ───────────────────────────────────────── */
+.icons {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.icons li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #000080;
+  font-size: 12px;
+}
+
+.icons li a:hover { text-decoration: underline; }
+
+/* Use text labels instead of font-awesome icon classes
+   (FA is not loaded in this theme) */
+.icon::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* ── Footer window ───────────────────────────────────────────── */
+.footer-window {
+  margin-top: 4px;
+}
+
+.footer-body {
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #444;
+}
+
+.footer-body a {
+  color: #000080;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 720px) {
+  body { padding: 12px 8px 24px; }
+
+  /* hero stays centered — just shrink avatar slightly */
+  .hero-avatar img { width: 80px; height: 80px; }
+
+  .fields {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .field.half { grid-column: span 1; }
+  .field:not(.half) { grid-column: span 1; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  body { padding: 8px 6px 20px; }
+
+  .hero-body { padding: 20px 12px 18px; }
+  .hero-avatar img { width: 72px; height: 72px; }
+  .hero-text h1 { font-size: 16px; }
+  .hero-nav-btn { min-width: 80px; }
+
+  .panel-body { padding: 12px; }
+
+  .actions li input { width: 100%; }
+  .actions { flex-direction: column;}
+  .actions ul { justify-content: center; }
+}
+
+/* ── Skip-to-content accessibility link ──────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  z-index: 1000;
+  padding: 4px 8px;
+  background: #fff;
+  border: 2px solid #000080;
+  font-size: 12px;
+  font-family: inherit;
+  transition: top .15s;
+}
+
+.skip-link:focus { top: 6px; }

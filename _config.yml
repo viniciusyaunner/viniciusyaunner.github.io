@@ -1,32 +1,41 @@
-# Site settings
+# ── Site settings ─────────────────────────────────────────────
 title: Vinicius Yaunner
-email: vinifysantos@gmail.com
-description: Programmer and Arch Linux user.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-author:
-street_address: 
-city: 
-state: SP
-zip_code: 
-country: Brazil
-phone: 
+email: viniciusyaunner@protonmail.com
+description: >
+  Programmer, security analyst, and cypherpunk. I run Arch and Parrot, contribute to open source, and care deeply about privacy and decentralized tech. When I'm not writing back-end code or digging into network infrastructure, I'm somewhere at the intersection of NLP, minimalist art, vaporwave, and art nouveau — finding patterns in both systems and aesthetics.
+author: Vinicius Yaunner 
+lang: en
+url: "https://viniciusyaunner.com"
+baseurl: ""
 
-icon:  # Font Awesome class for your site's icon
-
-# Social settings
-facebook_url:
-github_url: https://github.com/viniciusyaunner
-gitlab_url: 
-googleplus_url: 
+# ── Social ─────────────────────────────────────────────────────
+github_url:    https://github.com/viniciusyaunner
 instagram_url: https://www.instagram.com/viniciusyaunner/
-linkedin_url: https://www.linkedin.com/in/viniciusyaunner/
-pinterest_url:
-slack_url:
-twitter_url: 
+linkedin_url:  https://www.linkedin.com/in/viniciusyaunner/
 
-# Build settings
+# ── Footer ─────────────────────────────────────────────────────
+footer_text: >
+  Design inspired by Windows 98 — built with
+  <a href="https://jekyllrb.com" rel="noopener noreferrer" target="_blank">Jekyll</a>
+  and <a href="https://github.com/jdan/98.css" rel="noopener noreferrer" target="_blank">98.css</a>.
+
+# ── Build settings ─────────────────────────────────────────────
 markdown: kramdown
+kramdown:
+  input: GFM
 
-sass:
-style: compressed
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build output
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "*.gemspec"
+  - Gemfile.rb
+  - README.md
+  - LICENSE.md
+  - .gitlab-ci.yml
+  - .gitignore
+  - "**/*.Zone.Identifier"
+  - "**/*#Uf03a*"

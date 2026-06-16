@@ -1,19 +1,22 @@
-</div>
+  </div><!-- /#panels-container -->
 
-  <!-- Footer -->
-  <footer id="footer">
-    <p class="copyright">&copy; {{ site.title }}, this site is under the <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank">Creative Commons BY
-      3.0</a> and your design made with <a href="https://html5up.net" target="_blank">HTML5 UP</a>.
-      <br>The background image is in honor of Jean Giraud aka Moebius.</p>
+  <!-- ═══════════════════════════════════════
+       Footer window
+  ════════════════════════════════════════════ -->
+  <footer class="window footer-window" role="contentinfo">
+    <div class="title-bar">
+      <div class="title-bar-text">README.txt</div>
+      <div class="title-bar-controls" aria-hidden="true">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body footer-body">
+      <p>{{ site.footer_text }}</p>
+    </div>
   </footer>
 
-</div>
+</div><!-- /.desktop -->
 
-<!-- BG -->
-<div id="bg"></div>
-
-<!-- Scripts -->
-<script src="{{ 'assets/js/jquery.min.js' | absolute_url }}"></script>
-<script src="{{ 'assets/js/skel.min.js' | absolute_url }}"></script>
-<script src="{{ 'assets/js/util.js' | absolute_url }}"></script>
-<script src="{{ 'assets/js/main.js' | absolute_url }}"></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
