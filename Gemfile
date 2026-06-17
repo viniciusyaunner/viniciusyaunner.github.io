@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 3.10"
+gem "jekyll-seo-tag"
+gem "kramdown-parser-gfm"
+gem "webrick"
+gem "base64"

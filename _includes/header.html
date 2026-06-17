@@ -1,0 +1,55 @@
+<div class="desktop">
+
+  <!-- ═══════════════════════════════════════
+       Hero window  (always visible)
+  ════════════════════════════════════════════ -->
+  <div class="window hero-window" role="banner">
+    <div class="title-bar">
+      <div class="title-bar-text">{{ site.title }}</div>
+      <div class="title-bar-controls" aria-hidden="true">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body hero-body">
+
+      <div class="hero-avatar">
+        <img
+          src="/assets/images/avatar.webp"
+          alt="Photo of {{ site.author }}"
+          width="90" height="90"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <div class="hero-text">
+        <div class="title-and-icons-container">
+          <img src="/assets/images/w98-icon/game_freecell-1.png" srcset="/assets/images/w98-icon/game_freecell-1.png 1x, /assets/images/w98-icon/game_freecell-1@2x.png 2x" alt="" width="24" height="24" loading="lazy" aria-hidden="true" />
+          <h1>{{ site.title }}</h1>
+          <img src="/assets/images/w98-icon/spider-1.png" srcset="/assets/images/w98-icon/spider-1.png 1x, /assets/images/w98-icon/spider-1@2x.png 2x" alt="" width="24" height="24" loading="lazy" aria-hidden="true" />
+        </div>
+        <p>{{ site.description }}</p>
+
+        <nav class="hero-nav" aria-label="Sections">
+          {% for p in site.pages %}
+            {% if p.title %}
+              <button
+                class="hero-nav-btn"
+                data-panel="{{ p.title }}"
+                aria-controls="panel-{{ p.title }}"
+                aria-expanded="false"
+              >{{ p.title | capitalize }}</button>
+            {% endif %}
+          {% endfor %}
+        </nav>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       Content panels injected by _layout
+  ════════════════════════════════════════════ -->
+  <div id="panels-container">

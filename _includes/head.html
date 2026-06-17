@@ -1,0 +1,73 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ── Primary SEO ──────────────────────────────────────────── -->
+  <title>{% if page.title %}{{ page.title | capitalize }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}
+  </title>
+  <meta name="description" content="{{ site.description | xml_escape }}" />
+  <meta name="author" content="{{ site.author | xml_escape }}" />
+  <meta name="keywords"
+    content="portfolio, programmer, developer, nlp, linux, free software, open source, back-end, brazil, cypherpunks, FOSS, cybersecurity, cypherpunk" />
+  <link rel="canonical" href="{{ site.url }}/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ── Open Graph ────────────────────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}/" />
+  <meta property="og:title" content="{{ site.title | xml_escape }}" />
+  <meta property="og:description" content="{{ site.description | xml_escape }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/images/og.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="{{ site.title | xml_escape }}" />
+
+  <!-- ── Twitter Card ──────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ site.title | xml_escape }}" />
+  <meta name="twitter:description" content="{{ site.description | xml_escape }}" />
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/og.jpg" />
+
+  <!-- ── Structured Data (JSON-LD) ─────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}",
+    "sameAs": [
+      "{{ site.github_url }}",
+      "{{ site.linkedin_url }}",
+      "{{ site.instagram_url }}"
+    ],
+    "jobTitle": "Back-end Developer",
+    "description": "{{ site.description }}"
+  }
+  </script>
+
+  <!-- ── Security: Content-Security-Policy via meta ────────────── -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+         style-src 'self' 'unsafe-inline';
+         font-src 'self';
+         img-src 'self' https://avatars0.githubusercontent.com https://win98icons.alexmeub.com data:;
+         script-src 'self' 'unsafe-inline';
+         form-action https://formspree.io;
+         connect-src 'self' https://formspree.io;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+
+  <!-- ── Favicon ───────────────────────────────────────────────── -->
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="{{ '/assets/images/favicon.png' | relative_url }}" />
+
+  <!-- ── Performance: preconnect external origins ─────────────── -->
+  <link rel="preconnect" href="https://win98icons.alexmeub.com" crossorigin />
+  <link rel="preconnect" href="https://avatars0.githubusercontent.com" crossorigin />
+
+  <!-- ── 98.css (self-hosted to avoid third-party service worker deprecation warnings) ── -->
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/98.css' | relative_url }}" />
+
+  <!-- ── Custom styles (critical path last) ────────────────────── -->
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
+</head>

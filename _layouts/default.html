@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+{% include head.html %}
+<body>
+
+{% include header.html %}
+
+{% for p in site.pages %}
+  {% if p.title %}
+  <section
+    id="panel-{{ p.title }}"
+    class="window content-window"
+    role="region"
+    aria-label="{{ p.title | capitalize }}"
+    hidden
+  >
+    <div class="title-bar">
+      <div class="title-bar-text">{{ p.title | capitalize }}</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button class="panel-close-btn" aria-label="Close" data-panel="{{ p.title }}"></button>
+      </div>
+    </div>
+    <div class="window-body panel-body">
+      {{ p.content }}
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}
+
+{% include footer.html %}
+
+</body>
+</html>
