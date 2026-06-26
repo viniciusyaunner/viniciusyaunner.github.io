@@ -47,12 +47,12 @@
 
   <!-- ── Security: Content-Security-Policy via meta ────────────── -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self';
-         style-src 'self' 'unsafe-inline';
-         font-src 'self';
-         img-src 'self' https://avatars0.githubusercontent.com https://win98icons.alexmeub.com data:;
-         script-src 'self' 'unsafe-inline';
-         form-action https://formspree.io;
-         connect-src 'self' https://formspree.io;" />
+      style-src 'self' 'unsafe-inline';
+      font-src 'self' data:;
+      img-src 'self' https://avatars0.githubusercontent.com https://win98icons.alexmeub.com data:;
+      script-src 'self' 'unsafe-inline';
+      form-action 'self';
+      connect-src 'self';" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />

@@ -320,3 +320,62 @@ body {
 }
 
 .skip-link:focus { top: 6px; }
+/* Adicione ou substitua no custom.css */
+
+/* Destaque no Label para parecer mais "etiqueta" física */
+.field label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000080; /* Azul clássico do Win98 para links/títulos */
+    margin-bottom: 2px;
+}
+
+/* Efeito de foco mais pronunciado nos inputs */
+.field input[type="text"]:focus,
+.field input[type="email"]:focus,
+.field textarea:focus {
+    outline: 1px dotted #000080;
+    outline-offset: -4px; /* Ajuste para ficar dentro da borda interna */
+    background-color: #fff; /* Garante fundo branco */
+}
+
+/* Botão de Enviar com destaque sutil */
+.actions li input[type="submit"] {
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    background-color: #c0c0c0;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf; /* Sombra interna retrô */
+}
+
+.actions li input[type="submit"]:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #dfdfdf;
+    padding-top: 5px; /* Simula o clique descendo */
+    padding-bottom: 3px;
+}
+
+/* Mensagem de status com estilo de "Balão de Fala" ou caixa de alerta simples */
+#formStatus {
+    margin-top: 15px;
+    padding: 8px;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080; /* Borda sunken */
+    background-color: #ffffcc; /* Amarelo claro de alerta/clássico */
+    font-family: 'Pixelated MS Sans Serif', monospace;
+    text-align: center;
+    display: none; /* Escondido por padrão, mostrado via JS */
+}
+
+#formStatus.success {
+    display: block;
+    color: green;
+    border-color: #008000 #ffffff #ffffff #008000; /* Verde sucesso */
+    background-color: #e6ffe6;
+}
+
+#formStatus.error {
+    display: block;
+    color: red;
+    border-color: #800000 #ffffff #ffffff #800000; /* Vermelho erro */
+    background-color: #ffe6e6;
+}

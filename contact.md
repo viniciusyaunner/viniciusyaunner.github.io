@@ -5,27 +5,41 @@ title: contact
 
 <section>
   <h2>Contact Me</h2>
-  <form action="https://formspree.io/mdowrdkl" method="POST" novalidate>
+  
+  <!-- Formulário sem action/method pois usaremos JS Fetch -->
+  <form id="contactForm" novalidate>
+    <!-- Honeypot Anti-Bot (Oculto visualmente) -->
+    <div style="display:none;">
+      <label for="website">Website</label>
+      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+    </div>
     <div class="fields">
       <div class="field half">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" autocomplete="name" required />
+        <input type="text" name="name" id="name" autocomplete="name" required placeholder="Your Name" />
       </div>
+
       <div class="field half">
         <label for="email">Email</label>
-        <input type="text" name="_replyto" id="email" autocomplete="email" required />
+        <input type="email" name="_replyto" id="email" autocomplete="email" required placeholder="you@example.com" />
       </div>
+      
       <div class="field">
         <label for="message">Message</label>
-        <textarea name="message" id="message" rows="4" required></textarea>
+        <textarea name="message" id="message" rows="5" required placeholder="Write your message here..."></textarea>
       </div>
     </div>
+    
     <ul class="actions">
       <li><input type="submit" value="Send Message" /></li>
       <li><input type="reset" value="Reset" /></li>
     </ul>
   </form>
 
+  <!-- Div para exibir mensagens de sucesso/erro estilizada pelo main.js -->
+  <div id="formStatus"></div>
+
+  <!-- Ícones Sociais -->
   <ul class="icons">
     {% if site.instagram_url %}
     <li>
@@ -35,6 +49,7 @@ title: contact
       </a>
     </li>
     {% endif %}
+
     {% if site.github_url %}
     <li>
       <a href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -43,6 +58,7 @@ title: contact
       </a>
     </li>
     {% endif %}
+    
     {% if site.linkedin_url %}
     <li>
       <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

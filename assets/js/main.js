@@ -80,5 +80,68 @@
       });
     }
   });
+function initContactForm() {
+  var form = document.getElementById('contactForm');
+  if (!form) return; // Sai se não houver formulário na página
 
+  var statusDiv = document.getElementById('formStatus');
+  var submitBtn = form.querySelector('input[type="submit"]');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (!statusDiv) return;
+
+    // Feedback visual inicial
+    statusDiv.textContent = "Sending...";
+    statusDiv.className = ""; 
+    statusDiv.style.display = "block";
+    statusDiv.style.color = "#000";
+    statusDiv.style.borderColor = "#808080";
+    statusDiv.style.backgroundColor = "#c0c0c0"; 
+    
+    submitBtn.disabled = true;
+
+    var formData = new FormData(form);
+
+    fetch('/contact_api', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        statusDiv.textContent = data.message;
+        
+        if (data.message.toLowerCase().includes("sucesso") || data.message.toLowerCase().includes("success")) {
+            // Estilo de Sucesso (Verde Win98)
+            statusDiv.style.color = "green";
+            statusDiv.style.borderColor = "#008000 #ffffff #ffffff #008000";
+            statusDiv.style.backgroundColor = "#e6ffe6";
+            form.reset();
+        } else {
+            // Estilo de Erro (Vermelho Win98)
+            statusDiv.style.color = "red";
+            statusDiv.style.borderColor = "#800000 #ffffff #ffffff #800000";
+            statusDiv.style.backgroundColor = "#ffe6e6";
+        }
+    })
+    .catch(error => {
+        statusDiv.textContent = "Error sending message. Please try again.";
+        statusDiv.style.color = "red";
+        statusDiv.style.borderColor = "#800000 #ffffff #ffffff #800000";
+        statusDiv.style.backgroundColor = "#ffe6e6";
+        console.error('Error:', error);
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+    });
+  });
+}
+
+// Inicializa quando o DOM estiver pronto
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initContactForm);
+} else {
+  initContactForm();
+}
 })();
